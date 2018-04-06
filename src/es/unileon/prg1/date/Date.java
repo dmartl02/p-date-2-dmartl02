@@ -117,7 +117,7 @@ public class Date {
 					if((day >= 1) && (day <= 31){
 						right = true;
 					}
-						break; 	
+					break; 	
 				
 			case 4: 
 			case 6:
@@ -126,13 +126,13 @@ public class Date {
 					if((day >= 1) && (day <= 30)){
 						right = true;
 					}
-						break; 	
+					break; 	
 				
 			case 2:
 					if((day >= 1) && (day <= 28)){
 						right = true;
 					}
-						break; 	
+					break; 	
 				
 			
 		}
@@ -144,21 +144,25 @@ public class Date {
 		switch(month){
 			case 1:
 			case 2: 
-			case 3: System.out.pritnln("Invierno");
-					break:
+			case 3: 
+				System.out.pritnln("Invierno");
+				break:
 			case 4:
 			case 5:
-			case 6: System.out.pritnln("Primavera");
-					break:
+			case 6: 
+				System.out.pritnln("Primavera");
+				break:
 			case 7:
 			case 8:
-			case 9: System.out.pritnln("Verano");
-					break:
+			case 9: 
+				System.out.pritnln("Verano");
+				break:
 
 			case 10:
 			case 11:
-			case 12: System.out.pritnln("Otoño");
-					break:
+			case 12: 
+				System.out.pritnln("Otoño");
+				break:
 		}
 
 	}
@@ -167,10 +171,7 @@ public class Date {
 		return 12-month;
 	}
 
-	public void printDate(){
-
-	}
-
+	
 	public int daysUntilEndMonth(){
 		switch(month){
 			case 1:
@@ -179,43 +180,58 @@ public class Date {
 			case 7:
 			case 8:
 			case 10:
-			case 12: return 31-day;
-						break;
+			case 12: 
+				return 31-day;
+				break;
 			case 4: 
 			case 6:
 			case 9:
-			case 11: return 30 - day;
-						break;
-			case 2: return 28 - day;
-						break;
+			case 11: 
+				return 30 - day;
+				break;
+			case 2: 
+				return 28 - day;
+				break;
 		}
 	}
 
 	public void sameNumberOfDays(){
 		switch(month){
-			case 1: System.out.println("Marzo, Mayo, Julio, Agosto, Octubre, Diciembre");
+			case 1: 
+				System.out.println("Marzo, Mayo, Julio, Agosto, Octubre, Diciembre");
 				break;
-			case 2: System.out.println("Único mes con 28 días");
+			case 2: 
+				System.out.println("Único mes con 28 días");
 				break;
-			case 3: System.out.println("Enero, Mayo, Julio, Agosto, Octubre, Diciembre");
+			case 3: 
+				System.out.println("Enero, Mayo, Julio, Agosto, Octubre, Diciembre");
 				break;
-			case 4: System.out.println("Abril, Junio, Septiembre, Noviembre");
+			case 4: 
+				System.out.println("Abril, Junio, Septiembre, Noviembre");
 				break;
-			case 5: System.out.println("Enero, Julio, Agosto, Octubre, Diciembre");
+			case 5: 
+				System.out.println("Enero, Julio, Agosto, Octubre, Diciembre");
 				break;
-			case 6: System.out.println("Abril, Septiembre, Noviembre");
+			case 6: 
+				System.out.println("Abril, Septiembre, Noviembre");
 				break;
-			case 7: System.out.println("Enero, Mayo, Agosto, Octubre, Diciembre");
+			case 7: 
+				System.out.println("Enero, Mayo, Agosto, Octubre, Diciembre");
 				break;
-			case 8: System.out.println("Enero, Mayo, Octubre, Diciembre");
+			case 8: 
+				System.out.println("Enero, Mayo, Octubre, Diciembre");
 				break;
-			case 9: System.out.println("Abril, Junio, Noviembre");
+			case 9: 
+				System.out.println("Abril, Junio, Noviembre");
 				break;
-			case 10: System.out.println("Enero, Mayo, Agosto, Diciembre");
+			case 10: 
+				System.out.println("Enero, Mayo, Agosto, Diciembre");
 				break;
-			case 11: System.out.println("Abril, Junio, Septiembre");
+			case 11: 
+				System.out.println("Abril, Junio, Septiembre");
 				break;
-			case 12: System.out.println("Enero, Mayo, Agosto, Octubre");
+			case 12: 
+				System.out.println("Enero, Mayo, Agosto, Octubre");
 				break;	
 		}
 	}
@@ -280,11 +296,39 @@ public class Date {
 		System.out.println("Número de intentos: " +contador);
 	}
 
-	public void numberOfWeek(){
 
+	//El primer dia de 2018 fue un lunes
+	public void numberOfWeek(){
+		int dias = this.daysSinceFirst();
+		int restantes = dias % 7;
+
+		switch(restantes){
+			case 0:
+				System.out.println("Domingo");
+				break;
+			case 1:
+				System.out.println("Lunes");
+				break;
+			case 2:
+				System.out.println("Martes");
+				break;
+			case 3:
+				System.out.println("Miércoles");
+				break;
+			case 4:
+				System.out.println("Jueves");
+				break;
+			case 5:
+				System.out.println("Viernes");
+				break;
+			case 6:
+				System.out.println("Sábado");
+				break;
+		}
 	}
 
-	public void tomorrow (){
+
+	public void tomorrow(){
 		if((month==1) || (month==3) || (month==5) ||(month==7) ||(month==8) || (month==10)){
 			if(day < 31){
 				day + 1;
@@ -333,8 +377,7 @@ public class Date {
 	}
 
 
-
-
+	//Método que devuelve una fecha
 	public String toString(){
 		return this.day + "/" + this.month + "/" + this.year;
 	}
