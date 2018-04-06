@@ -139,30 +139,75 @@ public class Date {
 
 		return right;
 	}
+	
 
 	public void monthSeason(){
 		switch(month){
 			case 1:
-			case 2: 
-			case 3: 
 				System.out.pritnln("Invierno");
-				break:
+				break;
+
+			case 2: 
+				System.out.pritnln("Invierno");
+				break;
+
+			case 3: 
+				if(day < 21){
+					System.out.pritnln("Invierno");
+				
+				} else if(day >= 21){
+					System.out.pritnln("Primavera");
+				}
+				break;
+
 			case 4:
-			case 5:
-			case 6: 
 				System.out.pritnln("Primavera");
-				break:
+				break;
+
+			case 5:
+				System.out.pritnln("Primavera");
+				break;
+
+			case 6: 
+				if(day < 21){
+					System.out.pritnln("Primavera");
+				
+				} else if(day >= 21){
+					System.out.pritnln("Verano");
+				}
+				break;
+
 			case 7:
-			case 8:
-			case 9: 
 				System.out.pritnln("Verano");
-				break:
+				break;
+
+			case 8: 
+				System.out.pritnln("Verano");
+				break;
+
+			case 9: 
+				if(day < 21){
+					System.out.pritnln("Verano");
+				} else if(day >= 21){
+					System.out.pritnln("Otoño");
+				}
+				break;
 
 			case 10:
-			case 11:
-			case 12: 
 				System.out.pritnln("Otoño");
-				break:
+				break;
+
+			case 11:
+				System.out.pritnln("Otoño");
+				break;
+
+			case 12:
+				if(day <2 1){
+					System.out.pritnln("Otoño");
+				} else if(day >= 21){
+					System.out.pritnln("Invierno");
+				}
+				break;
 		}
 
 	}
